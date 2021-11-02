@@ -8,7 +8,7 @@ function generateRandomNumber(min, max) {
 function displayMessage(idBtnClicked) {
   //checks if the clicked button is the same with the random number
   if (random_number == idBtnClicked) {
-    alert("You guessed right");
+    alert("Congratulation! You guessed right");
   } else {
     alert("You guessed wrong");
   }
