@@ -1,13 +1,15 @@
-var random_number = Math.floor(Math.random() * 3); //random number generated
+var random_number = generateRandomNumber(1, 3); //random number generated
 console.log("Winning number is: " + random_number); //display in console the generated number
 
-function displayMessage(clicked_btn_id) {
+function generateRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function displayMessage(idBtnClicked) {
   //checks if the clicked button is the same with the random number
-  if (random_number == clicked_btn_id) {
+  if (random_number == idBtnClicked) {
     alert("You guessed right");
   } else {
     alert("You guessed wrong");
   }
 }
-
-//the interval of the random number is [0,3]
