@@ -1,7 +1,7 @@
-document.getElementById("submitguess").onclick = function () {
-  user_number = document.getElementById("guessField").value; //number guessed by user
-  console.log("User's guess: " + user_number);
-  var random_number = generateRandomNumber(1, user_number); //number generated randomly
+document.getElementById("submitNumber").onclick = function () {
+  input_number = document.getElementById("numberField").value; //number guessed by user
+  console.log("User's number: " + input_number);
+  var random_number = generateRandomNumber(1, input_number); //number generated randomly
   console.log("Winning number is: " + random_number);
 
   function generateRandomNumber(min, max) {
@@ -9,7 +9,7 @@ document.getElementById("submitguess").onclick = function () {
   }
 
   function createButtons() {
-    for (var i = 1; i <= user_number; ++i) {
+    for (var i = 1; i <= input_number; ++i) {
       var button = document.createElement("button");
     }
   }
