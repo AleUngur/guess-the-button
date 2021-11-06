@@ -8,10 +8,10 @@ document.getElementById("submitNumber").onclick = function () {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  let container = document.getElementsByClassName("container")[0];
+  var container = document.getElementsByClassName("container")[0];
 
   function createButtons(n) {
-    for (let i = 1; i <= n; ++i) {
+    for (var i = 1; i <= n; ++i) {
       let button = document.createElement("button");
       button.className = "btn btn-success my-3 mx-1";
       button.innerHTML = i;
@@ -25,7 +25,7 @@ document.getElementById("submitNumber").onclick = function () {
 
   function guessButton() {
     btns = document.getElementsByClassName("btn");
-    for (var j = 0; j < btns.length; j++) {
+    for (var j = 0; j < btns.length; ++j) {
       if (btns[j]) {
         btns[j].addEventListener("click", function () {
           if (random_number == event.target.id) {
@@ -40,7 +40,7 @@ document.getElementById("submitNumber").onclick = function () {
   guessButton();
 
   function afterMessage() {
-    let p = document.createElement("p");
+    var p = document.createElement("p");
     p.innerHTML =
       "If you want to try again please reload the page and enter a number";
     container.appendChild(p);
