@@ -1,2 +1,2 @@
 # guess-the-button
-A little project
+A mini button-guessing-game
