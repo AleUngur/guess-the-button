@@ -15,29 +15,18 @@
 
   <body>
     <div class="container">
-      <h2 class="mt-4">Try to guess the winning button</h2>
-      <button
-        type="button"
-        id="1"
-        onClick="displayMessage(this.id)"
-        class="btn btn-warning my-3 ml-3"
-        style="width: 50px; height: 50px"
-      ></button>
-      <button
-        type="button"
-        id="2"
-        onClick="displayMessage(this.id)"
-        class="btn btn-info my-3 ml-1"
-        style="width: 50px; height: 50px"
-      ></button>
-      <button
-        type="button"
-        id="3"
-        onClick="displayMessage(this.id)"
-        class="btn btn-success my-3 ml-1"
-        style="width: 50px; height: 50px"
-      ></button>
-      <p>If you want to try again please refresh the page</p>
+      <h2 class="mt-4 mb-4">Try to guess the winning button</h2>
+      <div class="form">
+        <label for="numberField">How many buttons to create? </label>
+        <input type="text" id="numberField" class="numberField" />
+        <input
+          type="submit"
+          value="Submit number"
+          class="numberSubmit"
+          id="submitNumber"
+          style="color: green"
+        />
+      </div>
     </div>
 
     <script src="script.js"></script>
