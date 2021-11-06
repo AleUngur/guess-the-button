@@ -20,16 +20,21 @@ document.getElementById("submitNumber").onclick = function () {
       button.id = i;
       button.style = "width: 50px; height: 50px";
       //button.onclick = displayMessage(this.id);
+      //button.addEventListener("click", displayMessage(button.id));
       container.appendChild(button);
     }
   }
   createButtons(input_number);
-};
 
-function displayMessage(idBtnClicked) {
-  if (random_number == idBtnClicked) {
-    alert("Congratulations! You guessed right");
-  } else {
-    alert("You guessed wrong");
+  btns = document.getElementsByClassName("btn");
+  //idButtonClicked = document.getElementById(this.id);
+  for (var j = 1; j <= btns.length; j++) {
+    btns[j].addEventListener("click", function () {
+      if (random_number == btns.id) {
+        alert("Congratulations! You guessed right");
+      } else {
+        alert("You guessed wrong");
+      }
+    });
   }
-}
+};
