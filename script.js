@@ -1,49 +1,32 @@
-document.getElementById("submitNumber").onclick = function () {
+function generateRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function createButtons() {
   var input_number = document.getElementById("numberField").value; //number of buttons to be created
-  //console.log("User's number: " + input_number);
-  var random_number = generateRandomNumber(1, input_number); //number generated randomly
-  //console.log("Winning number is: " + random_number);
-
-  function generateRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
+  var random_number = generateRandomNumber(1, input_number); //winning number
+  //console.log("Winning number: " + random_number);
   var container = document.getElementsByClassName("container")[0];
-
-  function createButtons(n) {
-    for (var i = 1; i <= n; ++i) {
-      let button = document.createElement("button");
-      button.className = "btn btn-success my-3 mx-1";
-      button.innerHTML = i;
-      button.type = "button";
-      button.id = i;
-      button.style = "width: 50px; height: 50px";
-      container.appendChild(button);
+  for (var i = 1; i <= input_number; ++i) {
+    let button = document.createElement("button");
+    button.className = "btn btn-success my-3 mx-1";
+    button.innerHTML = i;
+    button.type = "button";
+    button.id = i;
+    button.style = "width: 50px; height: 50px";
+    container.appendChild(button);
+    if (random_number == i) {
+      button.onclick = function () {
+        alert("Congratulations! You guessed right");
+      };
+    } else {
+      button.onclick = function () {
+        alert("You guessed wrong");
+      };
     }
   }
-  createButtons(input_number);
-
-  function guessButton() {
-    btns = document.getElementsByClassName("btn");
-    for (var j = 0; j < btns.length; ++j) {
-      if (btns[j]) {
-        btns[j].addEventListener("click", function () {
-          if (random_number == event.target.id) {
-            alert("Congratulations! You guessed right");
-          } else {
-            alert("You guessed wrong");
-          }
-        });
-      }
-    }
-  }
-  guessButton();
-
-  function afterMessage() {
-    var p = document.createElement("p");
-    p.innerHTML =
-      "If you want to try again please reload the page and enter a number";
-    container.appendChild(p);
-  }
-  afterMessage();
-};
+  var p = document.createElement("p");
+  p.innerHTML =
+    "If you want to try again please reload the page and repeat the process";
+  container.appendChild(p);
+}
